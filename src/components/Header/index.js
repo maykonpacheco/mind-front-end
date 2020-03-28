@@ -16,7 +16,7 @@ export default function Header() {
           <Link>
             <MdMenu size={24} color="#7b7b7b" />
           </Link>
-          <p to="/dashboard">SESSÕES</p>
+          <p to="/sessions">SESSÕES</p>
         </nav>
       </Content>
     </Container>

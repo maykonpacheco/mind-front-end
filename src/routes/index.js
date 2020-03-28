@@ -5,8 +5,8 @@ import Route from "./Route";
 import SignIn from "~/pages/SignIn";
 import SignUp from "~/pages/SignUp";
 
-import Dashboard from "~/pages/Dashboard";
-import Profile from "~/pages/Profile";
+import Sessions from "~/pages/Sessions";
+import NewSessions from "~/pages/Sessions/NewSessions";
 
 export default function Routes() {
   return (
@@ -14,8 +14,8 @@ export default function Routes() {
       <Route path="/" exact component={SignIn} />
       <Route path="/register" exact component={SignUp} />
 
-      <Route path="/dashboard" exact component={Dashboard} isPrivate />
-      <Route path="/profile" exact component={Profile} isPrivate />
+      <Route path="/sessions" exact component={Sessions} isPrivate />
+      <Route path="/new-sessions" exact component={NewSessions} isPrivate />
     </Switch>
   );
 }

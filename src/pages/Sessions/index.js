@@ -1,8 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Container, Time, AppointmentCLient, Month } from "./styles";
 
-import { Container, Time, Date, AppointmentCLient, Month } from "./styles";
+import ButtonCreateSession from "./ButtonCreateSession";
 
-export default function Dashboard() {
+export default function Sessions() {
   return (
     <Container>
       <header>
@@ -50,6 +52,9 @@ export default function Dashboard() {
       <Month>
         <strong>ABRIL 2020</strong>
       </Month>
+      <Link to="/new-sessions">
+        <ButtonCreateSession />
+      </Link>
     </Container>
   );
 }
