@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 import { Container, Time, AppointmentCLient, Month } from "./styles";
 
 import api from "~/services/api";
-import ButtonCreateSession from "./ButtonCreateSession";
+import ButtonCreateSession from "../../components/ButtonCreate";
 
 const range = [8, 9, 10, 11, 12];
 
@@ -25,7 +25,7 @@ export default function Sessions() {
 
   useEffect(() => {
     async function loadSchedule() {
-      const response = await api.get("appointments");
+      const response = await api.get("schedule");
 
       const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
