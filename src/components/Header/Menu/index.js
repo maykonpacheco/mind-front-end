@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { MdArrowForward } from "react-icons/md";
 
 import logo from "../../../assets/logo.svg";
+import profile from "../../../assets/profile.svg";
 import { Container, Profile, List } from "./styles";
 
 export default function Menu({ setMenuModal }) {
@@ -16,10 +17,7 @@ export default function Menu({ setMenuModal }) {
         <img src={logo} alt="logo" />
 
         <Profile>
-          <img
-            src={"https://api.adorable.io/avatars/50/abott@adorable.png"}
-            alt="logo"
-          />
+          <img src={profile} alt="logo" />
 
           <div>
             <p>Psicologo(a)</p>
