@@ -13,28 +13,7 @@ export default function Header() {
   return (
     <Container>
       <Content>
-        <nav>
-          <img src={logo} alt="GoBarber" />
-          <Link to="/dashboard">DASHBOARD</Link>
-        </nav>
-
-        <aside>
-          <Notifications />
-
-          <Profile>
-            <div>
-              <strong>{profile.name}</strong>
-              <Link to="/profile">Meu perfil</Link>
-            </div>
-            <img
-              src={
-                profile.avatar.url ||
-                "https://api.adorable.io/avatars/50/abott@adorable.png"
-              }
-              alt="Maykon Pacheco"
-            />
-          </Profile>
-        </aside>
+        <h1>olá</h1>
       </Content>
     </Container>
   );

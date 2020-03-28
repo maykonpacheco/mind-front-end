@@ -8,7 +8,7 @@ import logo from "~/assets/logo.svg";
 import { signUpRequest } from "~/store/modules/auth/actions";
 
 const schema = Yup.object().shape({
-  name: Yup.string().required("O nome é obrigatório"),
+  username: Yup.string().required("O nome é obrigatório"),
   email: Yup.string()
     .email("Insira um e-mail válido")
     .required("O e-mail é obrigatório"),
@@ -20,21 +20,17 @@ const schema = Yup.object().shape({
 export default function SignUp() {
   const dispatch = useDispatch();
 
-  function handleSubmit({ name, email, password }) {
-    dispatch(signUpRequest(name, email, password));
+  function handleSubmit({ username, email, password }) {
+    dispatch(signUpRequest(username, email, password));
   }
   return (
     <>
       <img src={logo} alt="Gobarber" />
 
       <Form schema={schema} onSubmit={handleSubmit}>
-        <Input name="name" placeholder="Nome completo" />
-        <Input name="email" type="email" placeholder="Seu e-mail" />
-        <Input
-          name="password"
-          type="password"
-          placeholder="Sua senha secreta"
-        />
+        <Input name="username" placeholder="Nome completo" />
+        <Input name="email" type="email" placeholder="E-mail" />
+        <Input name="password" type="password" placeholder="Senha" />
 
         <button type="submit">Criar conta</button>
         <Link to="/">Já tenho login</Link>

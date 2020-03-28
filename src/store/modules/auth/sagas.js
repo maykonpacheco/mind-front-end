@@ -17,11 +17,6 @@ export function* signIn({ payload }) {
 
     const { token, user } = response.data;
 
-    if (!user.provider) {
-      toast.error("Usuário não é prestador");
-      return;
-    }
-
     api.defaults.headers.Authorization = `Bearer ${token}`;
 
     yield put(SignInSuccess(token, user));
@@ -35,10 +30,10 @@ export function* signIn({ payload }) {
 
 export function* signUp({ payload }) {
   try {
-    const { name, email, password } = payload;
+    const { username, email, password } = payload;
 
     yield call(api.post, "users", {
-      name,
+      username,
       email,
       password,
       provider: true

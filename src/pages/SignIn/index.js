@@ -28,15 +28,13 @@ export default function SignIn() {
       <img src={logo} alt="Gobarber" />
 
       <Form schema={schema} onSubmit={handleSubmit}>
-        <Input name="email" type="email" placeholder="Seu e-mail" />
-        <Input
-          name="password"
-          type="password"
-          placeholder="Sua senha secreta"
-        />
+        <Input name="email" type="email" placeholder="E-mail" />
+        <Input name="password" type="password" placeholder="Senha" />
 
         <button type="submit">{loading ? "Carregando..." : "Acessar"}</button>
-        <Link to="/register">Criar conta gratuita</Link>
+        <Link to="/register">
+          Ainda não tem uma conta? <b>Criar Conta</b>
+        </Link>
       </Form>
     </>
   );
