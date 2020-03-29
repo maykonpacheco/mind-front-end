@@ -22,7 +22,7 @@ export default function Pacients() {
     }
 
     loadPacients();
-  }, [listPacients]);
+  }, []);
 
   return (
     <Container>
