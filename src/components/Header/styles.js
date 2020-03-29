@@ -64,3 +64,17 @@ export const Profile = styled.div`
     border-radius: 50%;
   }
 `;
+
+export const ButtonBack = styled.div`
+  cursor: pointer;
+  margin-left: 50px;
+
+  display: flex;
+  align-items: center;
+
+  span {
+    margin-left: 10px;
+    font-weight: bold;
+    color: #7b7b7b;
+  }
+`;

@@ -9,8 +9,7 @@ export const Container = styled.button`
 
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 
-  position: absolute;
-
+  position: fixed;
   right: 30px;
   bottom: 30px;
   z-index: 1;
