@@ -1,14 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { MdArrowForward } from "react-icons/md";
+import { useDispatch } from "react-redux";
 
 import logo from "../../../assets/logo.svg";
 import profile from "../../../assets/profile.svg";
 import { Container, Profile, List } from "./styles";
+import { signOut } from "~/store/modules/auth/actions";
 
 export default function Menu({ setMenuModal }) {
+  const dispatch = useDispatch();
+
   function closerMenu() {
     setMenuModal(false);
+  }
+
+  function handleSignOut() {
+    dispatch(signOut());
   }
 
   return (
@@ -34,7 +42,7 @@ export default function Menu({ setMenuModal }) {
           <Link>
             <MdArrowForward /> Financeiro
           </Link>
-          <Link>
+          <Link onClick={handleSignOut}>
             <MdArrowForward /> Sair
           </Link>
         </section>

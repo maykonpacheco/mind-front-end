@@ -25,63 +25,37 @@ export default function Sessions() {
 
   useEffect(() => {
     async function loadSchedule() {
-      const response = await api.get("schedule");
+      const response = await api.get(`pacients/1/schedules/3`);
 
-      const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-      const data = response.data.map(hour => {
-        /* const checkData = setSeconds(setMinutes(setHours(date, hour), 0), 0);
-        const compareDate = utcToZonedTime(checkData, timezone);
-        */
-
-        const dateFormatted = format(new Date(hour.date), "d", { locale: pt });
-        const dayWeek = "SEN";
-
-        console.log(hour);
-
-        return {
-          time: hour.time,
-          dateFormatted,
-          user: hour.user.username,
-          dayWeek
-        };
-      });
-      setSchedule(data);
+      setSchedule(response);
     }
     loadSchedule();
-  }, [date]);
+  }, []);
+
+  console.log(schedule);
 
   return (
     <Container>
       <header>
         <strong>MAR 22 - 28</strong>
       </header>
-
-      {schedule.map(time => (
-        <Time key={time.date}>
-          <nav>
-            <span>{time.dayWeek}</span>
-            <strong>{time.dateFormatted}</strong>
-          </nav>
-          <div>
-            <p>
-              {time.user ? (
-                <AppointmentCLient>
-                  <strong>{time.user}</strong>
-                  <span>{time.time}</span>
-                </AppointmentCLient>
-              ) : (
-                "Nenhum agendamento para hoje"
-              )}
-            </p>
-          </div>
-        </Time>
-      ))}
-
+      <Time>
+        <nav>
+          <span>SEG</span>
+          <strong>28</strong>
+        </nav>
+        <div>
+          <p>
+            <AppointmentCLient>
+              <strong>MAYKON PACHECO</strong>
+              <span>19:00</span>
+            </AppointmentCLient>
+          </p>
+        </div>
+      </Time>
       <header>
         <strong>MAR 25 - 31</strong>
       </header>
-
       <Month>
         <strong>ABRIL 2020</strong>
       </Month>
